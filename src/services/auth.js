@@ -2,7 +2,6 @@ import bcrypt from 'bcrypt';
 import { UsersCollection } from '../db/models/user.js';
 import createHttpError from 'http-errors';
 import { SessionsCollection } from '../db/models/session.js';
-<<<<<<< HEAD
 import { randomBytes } from 'node:crypto';
 import {
   FIFTEEN_MINUTES,
@@ -16,10 +15,6 @@ import { sendEmail } from '../utils/sendMail.js';
 import handlebars from 'handlebars';
 import path from 'node:path';
 import fs from 'node:fs/promises';
-=======
-import { randomBytes } from 'crypto';
-import { FIFTEEN_MINUTES, THIRTY_DAYS } from '../constants/index.js';
->>>>>>> abfbfc26e0ccd678002812fe29a3a5765b7a9a0c
 
 export const registerUser = async (payload) => {
   const user = await UsersCollection.findOne({ email: payload.email });
@@ -100,7 +95,6 @@ export const refreshUsersSession = async ({ sessionId, refreshToken }) => {
     ...newSession,
   });
 };
-<<<<<<< HEAD
 
 export const requestResetToken = async (email) => {
   const user = await UsersCollection.findOne({ email });
@@ -174,5 +168,3 @@ export const resetPassword = async (payload) => {
     { password: encryptedPassword },
   );
 };
-=======
->>>>>>> abfbfc26e0ccd678002812fe29a3a5765b7a9a0c
