@@ -84,9 +84,9 @@ export const updateContact = async (id, payload, userId, options = {}) => {
       { _id: id, userId },
       payload,
       {
-        new: true,
-        includeResultMetadata: true,
-        ...options,
+        // new: true,
+        // includeResultMetadata: true,
+        // ...options,
       },
     ).lean();
 
